@@ -33,5 +33,5 @@ jobs:
 
     - name: Build
       run: |
-      cd src/hiworld
-      go build -v .
+        cd src/hiworld
+        go build -v .
