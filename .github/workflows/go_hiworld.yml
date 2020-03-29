@@ -1,4 +1,4 @@
-name: Go
+name: Go_Src_hiworld
 
 on:
   push:
