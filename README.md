@@ -3,6 +3,8 @@ Following instructions are verfied setup of Golang on Ubuntu 16.04 version
 
 ## Install Golang
 - Get the OS specific installer from [here](https://golang.org/dl/) 
+- Run the command as `root` user or `sudo`
+- Extract go executable in `/usr/local` directory
 - For Ubuntu 16.04 version
 ```
 cd /usr/local/
