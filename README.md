@@ -31,6 +31,6 @@ go env
 ```
 ## Go to src path and start development
 ```
-cd /root/go/src
+cd $HOME/go/src
 mkdir <new_go_module_name>
 ```
