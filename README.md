@@ -23,6 +23,14 @@ echo "export GOPATH="\$HOME/go" >> ~/.profile
 echo "export GOBIN="\$GOPATH/bin"" >> ~/.profile
 source ~/.profile
 ```
+Where, 
+
+bin - directory to hold the go source executables
+
+src - source directory in which all the source modules will be coded
+
+pkg - directory to hold the dependency import packages
+
 
 ## Verify the installation
 ```
@@ -34,3 +42,9 @@ go env
 cd $HOME/go/src
 mkdir <new_go_module_name>
 ```
+## Bibliography
+https://www.tecmint.com/install-go-in-linux/
+
+https://golang.org/doc/install
+
+https://github.com/golang/go/wiki/SettingGOPATH
