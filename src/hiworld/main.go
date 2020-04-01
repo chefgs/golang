@@ -1,3 +1,4 @@
+// Simple Hi World program
 package main
 
 import (

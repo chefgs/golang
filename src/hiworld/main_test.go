@@ -1,3 +1,4 @@
+// Simple Hi World unit test program
 package main
 
 import "testing"
