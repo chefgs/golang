@@ -6,16 +6,16 @@ import (
   "github.com/gin-gonic/gin"
 )
 
-func postMethod(c *gin.Context) {
+func PostMethod(c *gin.Context) {
   fmt.Println("\napi.go 'postMethod' called")
-  message := "postMethod called"
+  message := "PostMethod called"
   c.JSON(http.StatusOK, message)
 }
 
 func main() {
   router := gin.Default()
 
-  router.POST("/", postMethod)
+  router.POST("/", PostMethod)
 
   listenPort := "4000"
   // Listen and Server on the LocalHost:Port
