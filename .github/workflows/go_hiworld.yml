@@ -35,3 +35,8 @@ jobs:
       run: |
         cd src/hiworld
         go build -v .
+
+    - name: Unit test
+      run: |
+        cd src/hiworld
+        go test
