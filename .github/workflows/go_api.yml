@@ -35,3 +35,8 @@ jobs:
       run: |
         cd src/api
         go build -v .
+        
+    - name: Unit Test
+      run: |
+        cd src/api
+        go test
