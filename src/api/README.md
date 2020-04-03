@@ -52,14 +52,124 @@ Each response header returns either of the HTTP status codes,
 401 Unauthorized
 500 Internal server error
 ```
+## Setup Golang development environment
+- Refer the [README here](https://github.com/chefgs/golang), to setup Golang dev environment.
 
 ## Create REST API using Golang
+### Why to choose Go for REST API
+- It is fast
+- It is simple to understand
+- It is compiled and works well with Microservices
+### Go modules
+We will be using below modules for our development
+- net/http
+- [Gin-gonic](https://github.com/gin-gonic/gin) REST API framework. It is a Go opensource utility module, which can be readily available to use.
+It provides the REST API controller framework.
+
+## Start Coding
+- Create file `api.go`
+- Every go code starts with package name definition
+`package main`
+
+- Then we need to declare the module import section
+```
+import (
+  "fmt"
+  "net/http"
+  "github.com/gin-gonic/gin"
+)
+```
+
+### In function main
+- Add gin controller to handle the HTTP events coming to API
+
+`router := gin.Default()`
+
+- Add functions to handle the POST and GET requests on URL route path "/"
+```
+  router.POST("/", PostMethod)
+  router.GET("/", GetMethod)
+```
+
+- Listen to the specified port of localhost
+```
+  listenPort := "4000"
+  // Listen and Server on the LocalHost:Port
+  router.Run(":"+listenPort)
+```
+
+### POST and GET methods
+Define the Post and Get methods to handle the requests coming to API in "/" route path
 
 ```
-go get -d "github.com/gin-gonic/gin"
+func PostMethod(c *gin.Context) {
+  fmt.Println("\napi.go 'PostMethod' called")
+  message := "PostMethod called"
+  c.JSON(http.StatusOK, message)
+}
+
+func GetMethod(c *gin.Context) {
+  fmt.Println("\napi.go 'GetMethod' called")
+  message := "GetMethod called"
+  c.JSON(http.StatusOK, message)
+}
+```
+
+Please find the entire [source code for API here](https://github.com/chefgs/golang/tree/master/src/api).
+
+### How to build the code
+```
 go mod init api
-go install api.go
+go get -d "github.com/gin-gonic/gin"
+go build api.go # to create the executable in current path
+or
+go install api.go # to create the executable in GOBIN path
 go run api.go
 ```
+
 ## API testing
-- Download and Start ngrok on port 4000
+- When we run the above code, it runs the REST API on http://localhost:4000/ of the server.
+
+### Method 1
+- To verify our REST API, we need to expose the localhost of the server to internet
+- So we can use "ngrok" for this purpose
+- Download [ngrok here](https://dl.equinox.io/ngrok/ngrok/stable) 
+- Extract the ngrok executable in some location on your server.
+- Start ngrok on port 4000(Port defined in go API code) as below,
+
+`./ngrok http 4000`
+- ngrok generates a dynamic URL. For ex: `http://123er5678.ngrok.io`
+
+- The REST API can be tested by adding the URL in browser address bar, 
+`http://123er5678.ngrok.io/` 
+
+- The browser should show,
+`GetMethod Called`
+
+### Method 2
+- Otherwise, we can use curl command inside same server to verify the endpoint URL, return success.
+- In the same server, in which our REST API is running, execute the below commands, to verify the API
+
+- POST method
+`curl -X POST http://localhost:4000/`
+
+- The console output should show,
+`PostMethod Called`
+
+- GET method
+`curl -X GET http://localhost:4000/`
+
+- The console output should show,
+`GetMethod Called`
+
+## Unit Testing of Go REST API
+- Please refer to the Unit testing code added `api_test.go`
+- It uses the Go "testing" module 
+- There is mock POST and GET request implemented in the code
+- Below command can be used to verify the Unit Testing of REST API, 
+`go test`
+
+## Github actions CI flow
+- Please refer the Github action workflow file [located here](https://github.com/chefgs/golang/blob/master/.github/workflows/go_api.yml)
+- This file shows, how to create Golang CI workflow using Github action yaml file.
+- The action workflow file will be invoked, whenever there is code push happens in the repo "golang"
