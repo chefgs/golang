@@ -19,6 +19,10 @@ In other words, it should be possible to make two or more HTTP requests in any o
 
 - Layered: The requesting client need not know whether it’s communicating with the actual server, a proxy, or any other intermediary.
 
+- Uniform interface – REST is defined by four interface constraints: identification of resources; manipulation of resources through representations; self-descriptive messages; and, hypermedia as the engine of application state.
+
+- Code on demand (optional) – REST allows client functionality to be extended by downloading and executing code in the form of applets or scripts. This simplifies clients by reducing the number of features required to be pre-implemented.
+
 ## What makes a RESTful API
 A REST API consists of,
 1. API Endpoint URL
