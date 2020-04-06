@@ -175,4 +175,14 @@ go run api.go
 - The action workflow file will be invoked, whenever there is code push happens in the repo "golang"
 
 ## Docker deployment
-TBA
+### How to run program in docker
+`docker build -t apigopgm . --rm`
+
+`docker image ls`
+
+`docker run -p 4000:4000 --name apicontainer --rm apigopgm`
+
+`docker container ls`
+
+`docker stop apicontainer`
+
