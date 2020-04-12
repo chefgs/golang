@@ -193,7 +193,7 @@ docker stop apicontainer
 - It is possible to create the container by linking the "github" repository
 - Choose the appropriate `Dockerfile` to create image, in this repo, Dockerfile located under the path `src/api/`
 - The image created as part of this deployment will be stored into `Google Container Registry (GCR)`
-- Once the kube deployment is successful, we then have to expose the Service to consume the REST API.
+- Once the kube deployment is successful, we then have to expose the Service as `API Endpoint` to consume the REST API functions.
 - Choose `expose` option and provide the port number, in which the REST API application has been configured in the code.
 - In our case, we have exposed the API at `port 4000`
 - After exposing the Kube workload, it generates the `publicIP:4000` for us to utilise the API.
