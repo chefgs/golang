@@ -126,6 +126,17 @@ or
 go install api.go # to create the executable in GOBIN path
 go run api.go
 ```
+## Unit Testing of Go REST API
+- Please refer to the Unit testing code added `api_test.go`
+- It uses the Go "testing" module 
+- There is mock POST and GET request implemented in the code
+- Below command can be used to verify the Unit Testing of REST API, 
+`go test`
+
+## Github actions CI flow
+- Please refer the Github action workflow file [located here](https://github.com/chefgs/golang/blob/master/.github/workflows/go_api.yml)
+- This file shows, how to create Golang CI workflow using Github action yaml file.
+- The action workflow file will be invoked, whenever there is code push happens in the repo "golang"
 
 ## API testing
 - When we run the above code, it runs the REST API on http://localhost:4000/ of the server.
@@ -162,27 +173,29 @@ go run api.go
 - The console output should show,
 `GetMethod Called`
 
-## Unit Testing of Go REST API
-- Please refer to the Unit testing code added `api_test.go`
-- It uses the Go "testing" module 
-- There is mock POST and GET request implemented in the code
-- Below command can be used to verify the Unit Testing of REST API, 
-`go test`
+### Method 3
+### Docker deployment
+### How to run program as docker container
+```
+docker build -t apigopgm . --rm
+docker image ls
+docker run -p 4000:4000 --name apicontainer --rm apigopgm
+docker container ls
+docker stop apicontainer
+```
 
-## Github actions CI flow
-- Please refer the Github action workflow file [located here](https://github.com/chefgs/golang/blob/master/.github/workflows/go_api.yml)
-- This file shows, how to create Golang CI workflow using Github action yaml file.
-- The action workflow file will be invoked, whenever there is code push happens in the repo "golang"
+### Method 4
+### Create API service using Google Cloud Kubernetes Engine
+- Login into Google Cloud Console
+- Open Navigation menu from the left and choose `Compute > Kubernetes Engine`
+- Choose `Clusters > Create Cluster` and follow instructions to create Cluster
+- Next, choose `Workloads > Deploy` to create the container workload and attach it to the Cluster created above
+- It is possible to create the container by linking the "github" repository
+- Choose the appropriate `Dockerfile` to create image, in this repo, Dockerfile located under the path `src/api/`
+- The image created as part of this deployment will be stored into `Google Container Registry (GCR)`
+- Once the kube deployment is successful, we then have to expose the Service to consume the REST API.
+- Choose `expose` option and provide the port number, in which the REST API application has been configured in the code.
+- In our case, we have exposed the API at `port 4000`
+- After exposing the Kube workload, it generates the `publicIP:4000` for us to utilise the API.
 
-## Docker deployment
-### How to run program in docker
-`docker build -t apigopgm . --rm`
-
-`docker image ls`
-
-`docker run -p 4000:4000 --name apicontainer --rm apigopgm`
-
-`docker container ls`
-
-`docker stop apicontainer`
-
+Please reach out to me, in case if more details required.
