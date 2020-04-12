@@ -198,4 +198,6 @@ docker stop apicontainer
 - In our case, we have exposed the API at `port 4000`
 - After exposing the Kube workload, it generates the `publicIP:4000` for us to utilise the API.
 
+Note: Refer the [Google documentation](https://cloud.google.com/source-repositories/docs/mirroring-a-github-repository) for connecting the Github repo with GCP.
+
 Please reach out to me, in case if more details required.
