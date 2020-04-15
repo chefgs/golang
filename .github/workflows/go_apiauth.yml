@@ -1,3 +1,8 @@
+name: Go_Src_apiauth
+
+on:
+  push:
+    branches: [ master ]
   pull_request:
     branches: [ master ]
 

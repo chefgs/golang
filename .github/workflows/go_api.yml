@@ -1,4 +1,4 @@
-name: Go_Src_api.go
+name: Go_Src_api
 
 on:
   push:
