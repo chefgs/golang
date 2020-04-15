@@ -38,5 +38,5 @@ jobs:
         
     - name: Unit Test
       run: |
-        cd src/api
+        cd src/apiauth
         go test
