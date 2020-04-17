@@ -1,5 +1,5 @@
 // Golang REST API program
-package api
+package main
 
 import (
   "fmt"

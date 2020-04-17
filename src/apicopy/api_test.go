@@ -1,5 +1,5 @@
 // Golang REST API unit testing program
-package api
+package main
 
 import (
   "testing"
