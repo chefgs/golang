@@ -1,4 +1,4 @@
-module restapi
+module github.com/chefgs/golang/src/apicopy
 
 go 1.14
 
