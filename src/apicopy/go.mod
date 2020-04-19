@@ -1,4 +1,4 @@
-module example.com/api
+module restapi
 
 go 1.14
 

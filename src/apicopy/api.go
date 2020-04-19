@@ -1,5 +1,5 @@
 // Golang REST API program
-package main
+package restapi
 
 import (
   "fmt"
@@ -19,7 +19,7 @@ func GetMethod(c *gin.Context) {
   c.JSON(http.StatusOK, message)
 }
 
-func main() {
+func HttpMethods() {
   router := gin.Default()
 
   router.POST("/", PostMethod)
