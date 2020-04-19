@@ -19,7 +19,7 @@ func GetMethod(c *gin.Context) {
   c.JSON(http.StatusOK, message)
 }
 
-func HttpMethods() {
+func HttpFunctionCalls() {
   router := gin.Default()
 
   router.POST("/", PostMethod)
