@@ -1,0 +1,58 @@
+docker run -ti image-name 'cmd to execute'
+
+# list available images
+docker image ls 
+
+# list containers
+docker ps -l # last stopped container
+docker ps -a # all containers (run and stopped)
+
+# Creating new images
+Get the container name from 'NAMES' tag
+
+docker commit container_name_tag new_image_name
+
+docker run --rm # used for delete container when stopped
+docker run -d # used to detach container, run in background and return to cmd terminal
+
+docker attach container_name # used to go into the container again
+
+# When inside container, run ctrl+p ctrl+q to exit the container and but keep it running in background
+
+# Docker push to registry steps
+# Create a username in hub.docker.com
+# Create image repo in the user space
+
+# login to docker hub user
+docker login --username username
+Password:
+WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+docker image ls
+docker tag apigopgm:latest gsdockit/gsgoapi
+docker push gsdockit/gsgoapi
+###
+# Once image uploaded to registry, we can directly use the command
+docker run --rm gsdockit/gsgoapi:latest 
+
+------
+
+# Sharing system volume
+docker run -ti -v "shared_path_from_loser:/shared_path_in_container" ubuntu bash
+
+volumes-from option used to share data between containers as ephemeral and is deleted when no containers using it
+
+---
+
+It is possible to create multiple docker images in one dockerfile.
+FROM ubuntu as builder
+-- do something
+FROM alpine
+COPY --from=builder some-command
+
+--
+docker uses cgroups and namespaces
+
+It can done using multiple FROM statement and --from=stage
