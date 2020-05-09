@@ -19,8 +19,8 @@ rm go1.14.1.linux-amd64.tar.gz
 - Add path to environment permanently by adding in profile
 ```
 export "PATH=$PATH:/usr/local/go/bin"
-echo "export GOPATH=$HOME/go"
-echo "export GOBIN=$GOPATH/bin"
+export "GOPATH=$HOME/go"
+export "GOBIN=$GOPATH/bin"
 ```
 - Execute .profile file to make effect of Env variable updates
 ```
