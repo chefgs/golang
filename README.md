@@ -13,9 +13,19 @@ tar -xvzf go1.14.1.linux-amd64.tar.gz
 rm go1.14.1.linux-amd64.tar.gz 
 ```
 
-## Setup Go development 
+## Setup Go development environment 
 - Create directories for development
+
 `mkdir -p $HOME/go/{bin,src,pkg}`
+
+Where,
+
+bin - directory to hold the go source executables
+
+src - source directory in which all the source modules will be coded
+
+pkg - directory to hold the dependency import packages
+
 - Add path to environment permanently by adding in profile
 ```
 export "PATH=$PATH:/usr/local/go/bin"
@@ -26,14 +36,6 @@ export "GOBIN=$GOPATH/bin"
 ```
 source ~/.profile
 ```
-
-Where, 
-
-bin - directory to hold the go source executables
-
-src - source directory in which all the source modules will be coded
-
-pkg - directory to hold the dependency import packages
 
 
 ## Verify the installation
