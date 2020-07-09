@@ -1,8 +1,8 @@
-* TOC
-{:toc}
-
 # Golang setup and getting started
 Following instructions are verfied setup of Golang on Ubuntu 16.04 version
+
+## Table of Contents
+[Install Golang](#Install Golang)
 
 ## Install Golang
 - Get the OS specific installer from [here](https://golang.org/dl/) 
