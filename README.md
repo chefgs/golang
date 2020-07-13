@@ -2,11 +2,11 @@
 Following instructions are verfied setup of Golang on Ubuntu 16.04 version
 
 ## Table of Contents
-- [Install Golang](#Install-Golang)
-- [Setup Go development environment](Setup-Go-development-environment)
-- [Verify the installation](Verify-the-installation)
-- [Go to src path and start development](Go-to-src-path-and-start-development)
-- [Bibliography](Bibliography)
+- [Install Golang](#install-golang)
+- [Setup Go development environment](#setup-go-development-environment)
+- [Verify the installation](#verify-the-installation)
+- [Go to src path and start development](#go-to-src-path-and-start-development)
+- [Bibliography](#bibliography)
 
 
 ## Install Golang
