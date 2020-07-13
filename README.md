@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/chefgs/golang.svg?branch=master)](https://travis-ci.org/chefgs/golang)
+
 # Golang setup and getting started
 Following instructions are verfied setup of Golang on Ubuntu 16.04 version
 
