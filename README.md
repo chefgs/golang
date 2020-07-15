@@ -59,8 +59,8 @@ cd $HOME/go/src
 mkdir <new_go_module_name>
 ```
 ## Bibliography
-https://www.tecmint.com/install-go-in-linux/
+[Install Go in Linux](https://www.tecmint.com/install-go-in-linux/)
 
-https://golang.org/doc/install
+[Golang Install Doc](https://golang.org/doc/install)
 
-https://github.com/golang/go/wiki/SettingGOPATH
+[Set Go Env Variable](https://github.com/golang/go/wiki/SettingGOPATH)
