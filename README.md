@@ -22,6 +22,7 @@ wget https://dl.google.com/go/go1.14.1.linux-amd64.tar.gz
 tar -xvzf go1.14.1.linux-amd64.tar.gz 
 rm go1.14.1.linux-amd64.tar.gz 
 ```
+-
 
 ## Setup Go development environment 
 - Create directories for development
@@ -46,7 +47,6 @@ export "GOBIN=$GOPATH/bin"
 ```
 source ~/.profile
 ```
-
 
 ## Verify the installation
 ```
