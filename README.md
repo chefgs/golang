@@ -22,6 +22,12 @@ wget https://dl.google.com/go/go1.14.1.linux-amd64.tar.gz
 tar -xvzf go1.14.1.linux-amd64.tar.gz 
 rm go1.14.1.linux-amd64.tar.gz 
 ```
+or
+```
+cd /tmp
+wget https://dl.google.com/go/go1.14.1.linux-amd64.tar.gz
+sudo tar -xvzf go1.14.1.linux-amd64.tar.gz -C /usr/local
+```
 -
 
 ## Setup Go development environment 
