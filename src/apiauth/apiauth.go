@@ -25,7 +25,7 @@ func GetMethod(c *gin.Context) {
         fmt.Println(err)
         return
   }
-  fmt.Println("Request Payload Data: ", string(ReqPayload))
+  //fmt.Println("Request Payload Data: ", string(ReqPayload))
 }
 
 func PostMethod(c *gin.Context) {
@@ -40,7 +40,7 @@ func PostMethod(c *gin.Context) {
         fmt.Println(err)
         return
   }
-  fmt.Println("Request Payload Data: ", string(ReqPayload))
+  //fmt.Println("Request Payload Data: ", string(ReqPayload))
 }
 
 func main() {
