@@ -1,6 +1,20 @@
+# Golang Examples Repo
+
+## Contibution Guide
+If you're planning to contribute - Please read further,
+
+- Read [Contribution Guidelines](./CONTRIBUTING.md) before contributing to this repository! Make sure to add any new go code into `src` directory.
+
+- Read GitHub [Code Of Conduct guidelines](./CODE_OF_CONDUCT.md)before contributing to this repository!
+
+- Feel free to pick up any of the open [Issues](https://github.com/chefgs/golang/issues) or create new issue using the [template](https://github.com/chefgs/golang/issues/new/choose)!
+
+
+---
+
 [![Build Status](https://travis-ci.org/chefgs/golang.svg?branch=master)](https://travis-ci.org/chefgs/golang)
 
-# Golang setup and getting started
+## Golang setup and getting started
 Following instructions are verfied setup of Golang on Ubuntu 16.04 version
 
 ## Table of Contents
@@ -73,9 +87,4 @@ mkdir <new_go_module_name>
 
 ---
 
-## If you're planning to contribute - Please read further 
-- Read [Contribution Guidelines](./CONTRIBUTING.md) before contributing to this repository!
 
-- Read GitHub [Code Of Conduct guidelines](./CODE_OF_CONDUCT.md)before contributing to this repository!
-
-- Feel free to pick up any of the open [Issues](https://github.com/chefgs/golang/issues) or create new issue using the [template](https://github.com/chefgs/golang/issues/new/choose)!
