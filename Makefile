@@ -1,23 +1,32 @@
-BINARY_NAME=main.out
+export REPO_GOSRC_PATH := $(shell pwd)
 
-include src/api
-include src/apiauth
-include src/apicopy
-include src/helloworld
-include src/hiworld
- 
+lint:
+    golangci-lint run --enable-all
+
+test:
+echo `pwd`
+ls -l | awk '{ print $9 }' | sed 1d | while read dir
+do
+cd $dir
+	go get -d
+	go test
+cd ..
+done
+
+
+build:
+echo `pwd`
+ls -l | awk '{ print $9 }' | sed 1d | while read dir
+do
+cd $dir
+	go get -d
+	go build
+cd ..
+done
+
 all: build test
  
-build:
-    go build -o ${BINARY_NAME} main.go
- 
-test:
-    go test -v main.go
- 
-run:
-    go build -o ${BINARY_NAME} main.go
-    ./${BINARY_NAME}
+# run:
  
 clean:
     go clean
-    rm ${BINARY_NAME}
