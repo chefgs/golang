@@ -70,3 +70,12 @@ mkdir <new_go_module_name>
 [Golang Install Doc](https://golang.org/doc/install)
 
 [Set Go Env Variable](https://github.com/golang/go/wiki/SettingGOPATH)
+
+---
+
+## If you're planning to contribute - Please read further 
+- Read [Contribution Guidelines](./CONTRIBUTING.md) before contributing to this repository!
+
+- Read GitHub [Code Of Conduct guidelines](./CODE_OF_CONDUCT.md)before contributing to this repository!
+
+- Feel free to pick up any of the open [Issues](https://github.com/chefgs/golang/issues) or create new issue using the [template](https://github.com/chefgs/golang/issues/new/choose)!
