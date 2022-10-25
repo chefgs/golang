@@ -12,7 +12,7 @@ If you're planning to contribute - Please read further,
 
 ---
 
-[![Build Status](https://travis-ci.org/chefgs/golang.svg?branch=master)](https://travis-ci.org/chefgs/golang)
+[![Go Build and Test](https://github.com/chefgs/golang/actions/workflows/Go_Build_Test.yml/badge.svg)](https://github.com/chefgs/golang/actions/workflows/Go_Build_Test.yml)
 
 ## Golang setup and getting started
 Following instructions are verfied setup of Golang on Ubuntu 16.04 version
