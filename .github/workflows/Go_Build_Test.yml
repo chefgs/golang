@@ -38,7 +38,7 @@ jobs:
         done
       working-directory: src
         
-      - name: Go Tests
+    - name: Go Tests
       run: |
         ls -ltr | grep drw | awk '{print $9}' | while read dir_name 
         do
