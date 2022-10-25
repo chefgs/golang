@@ -32,7 +32,7 @@ jobs:
         ls -ltr | grep drw | awk '{print $9}' | while read dir_name 
         do
         cd $dir_name
-        echo $dir_name
+        echo "Running Build in $dir_name"
         go build -v ./...
         cd ..
         done
@@ -43,7 +43,7 @@ jobs:
         ls -ltr | grep drw | awk '{print $9}' | while read dir_name 
         do
         cd $dir_name
-        echo $dir_name
+        echo "Running Test in $dir_name"
         go test -v ./...
         cd ..
         done
