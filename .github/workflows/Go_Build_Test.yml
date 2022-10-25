@@ -1,0 +1,50 @@
+# This workflow will build a golang project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-go
+
+name: Go
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Go
+      uses: actions/setup-go@v3
+      with:
+        go-version: 1.18
+
+#    - name: Golang ci-lint
+#      uses: golangci/golangci-lint-action@v3
+#      with:
+#        version: v1.29
+#        working-directory: src
+          
+    - name: Go Build
+      run: |
+        ls -ltr | grep drw | awk '{print $9}' | while read dir_name 
+        do
+        cd $dir_name
+        echo $dir_name
+        go build -v ./...
+        cd ..
+        done
+      working-directory: src
+        
+      - name: Go Tests
+      run: |
+        ls -ltr | grep drw | awk '{print $9}' | while read dir_name 
+        do
+        cd $dir_name
+        echo $dir_name
+        go test -v ./...
+        cd ..
+        done
+      working-directory: src
