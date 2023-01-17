@@ -6,9 +6,9 @@ This repo contains the Go source code for converting the given `URL` to a shorte
 
 - API call to convert the given URL to shortened URL
 - API call to fetch the previously given URL to get re-fetch shortened URL
-- Go test files added to make sure the source code works fine, with mock test scenarios added in test file
+- Go test files added to make sure the source code works fine, with mock test scenarios added in test file (by running `go test`)
 - Created `Dockerfile` to execute the program using `docker build` and `docker run` command
-- Image of urlshortener pushed into docker hub registry for easy/quick access
+- Image of `urlshortener` pushed into docker hub registry (`gsdockit/urlshortener`) for easy/quick access
 
 ## How to run
 
