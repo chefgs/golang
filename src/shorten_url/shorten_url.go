@@ -35,7 +35,7 @@ func GetCache(key string) (urlCacheStore, bool) {
 } */
 
 func GetUrlAndCovert(c *gin.Context) {
-	fmt.Println("\n'GetUrlAndCovert' called")
+	//fmt.Println("\n'GetUrlAndCovert' called")
 	urlToCovert := c.Params.ByName("urlToCovert")
 	//message := "GetMethod Called With Param: " + urlValue
 
@@ -68,8 +68,8 @@ func GetUrlAndCovert(c *gin.Context) {
 	}
 }
 
-func GetStoredUrls(c *gin.Context) {
-	fmt.Println("\n'GetStoredUrls' called")
+func GetStoredUrl(c *gin.Context) {
+	//fmt.Println("\n'GetStoredUrls' called")
 	urlToFetch := c.Params.ByName("urlToFetch")
 
 	// get previously stored url
@@ -85,8 +85,8 @@ func main() {
 	router.GET("/:urlToCovert", GetUrlAndCovert)
 
 	// Create sub router to add "Get" function call to retrieve shortened url
-	subRouter := router.Group("/v1/fetchCachedUrl")
-	subRouter.GET("/:urlToFetch", GetStoredUrls)
+	subRouter := router.Group("/v1/fetchcachedurl")
+	subRouter.GET("/:urlToFetch", GetStoredUrl)
 
 	listenPort := "8086"
 	// Listen and Server on the LocalHost:Port
