@@ -5,7 +5,7 @@ This repo contains the Go source code for converting the given `URL` to a shorte
 ## Requirements Implemented
 
 - API call to convert the given URL to shortened URL `http://localhost:8086/v1/<url_to_covert>`
-- API call to fetch the previously given URL to get re-fetch shortened URL `http://localhost:8086/v2/<url_to_covert>`
+- API call to fetch the previously given URL to get re-fetch shortened URL `http://localhost:8086/v1/fetchcachedurl/<url_input_used_to_convert>`
 - Go test files added to make sure the source code works fine, with mock test scenarios added in test file (by running `go test`)
 - Created `Dockerfile` to execute the program using `docker build` and `docker run` command
 - Image of `urlshortener` pushed into docker hub registry (`gsdockit/urlshortener`) for easy/quick access
