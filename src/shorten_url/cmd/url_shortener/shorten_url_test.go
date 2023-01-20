@@ -18,7 +18,7 @@ func TestGetUrlAndCovertMethod(t *testing.T) {
 	// here is the same as one of the routes you defined in the router setup
 	// block!
 	body := bytes.NewBuffer([]byte("{\"UrlShortenerApiTest\":\"GetUrlAndCovert\"}"))
-	req, err := http.NewRequest("GET", "/apitest.com", body)
+	req, err := http.NewRequest("GET", "/v1/apitest.com", body)
 	if err != nil {
 		t.Fatalf("Couldn't create request: %v\n", err)
 	}
@@ -27,7 +27,7 @@ func TestGetUrlAndCovertMethod(t *testing.T) {
 	// Setup your router, just like you did in your main function, and
 	// register your routes
 	router := gin.Default()
-	router.GET("/:urlToCovert", GetUrlAndCovert)
+	router.GET("/v1/:urlToCovert", GetUrlAndCovert)
 
 	// Create a response recorder so you can inspect the response
 	w := httptest.NewRecorder()
