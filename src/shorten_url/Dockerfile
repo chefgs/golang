@@ -17,4 +17,4 @@ RUN go install -v ./...
 # Export necessary port
 EXPOSE 8086
 
-CMD ["shorten_url"]
+CMD ["url_shortener"]
