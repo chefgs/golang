@@ -33,7 +33,7 @@ func main() {
 			return
 		}
 
-		apiKey := "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"
+		apiKey := "sk-m"
 
 		// Prepare the messages for GPT API input
 		var chatInput []map[string]string
