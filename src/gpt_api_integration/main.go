@@ -4,9 +4,10 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/gin-gonic/gin"
 	"io/ioutil"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 type GPTResponse struct {
@@ -17,8 +18,8 @@ type GPTResponse struct {
 
 type GPTRequest struct {
 	Messages []struct {
-		Role     string `json:"role"`
-		Content  string `json:"content"`
+		Role    string `json:"role"`
+		Content string `json:"content"`
 	} `json:"messages"`
 }
 
@@ -32,11 +33,11 @@ func main() {
 			return
 		}
 
-		apiKey := "sk-xzy"
+		apiKey := "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"
 
 		// Prepare the messages for GPT API input
 		var chatInput []map[string]string
-		chatInput = append(chatInput, map[string]string{"role": "system", "content": "You are a helpful assistant."})
+		// chatInput = append(chatInput, map[string]string{"role": "system", "content": "You are a helpful assistant."})
 		for _, message := range req.Messages {
 			chatInput = append(chatInput, map[string]string{"role": "user", "content": message.Content})
 		}
@@ -47,16 +48,16 @@ func main() {
 		})
 		reqBody := bytes.NewReader(data)
 		apiURL := "https://api.openai.com/v1/engines/text-davinci-003/completions"
-		req, err := http.NewRequest("POST", apiURL, reqBody)
+		api_req, err := http.NewRequest("POST", apiURL, reqBody)
 		if err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 			return
 		}
-		req.Header.Set("Authorization", fmt.Sprintf("Bearer %s", apiKey))
-		req.Header.Set("Content-Type", "application/json")
+		api_req.Header.Set("Authorization", fmt.Sprintf("Bearer %s", apiKey))
+		api_req.Header.Set("Content-Type", "application/json")
 
 		client := &http.Client{}
-		resp, err := client.Do(req)
+		resp, err := client.Do(api_req)
 		if err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 			return
@@ -79,4 +80,3 @@ func main() {
 
 	r.Run(":8080")
 }
-
